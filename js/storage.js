@@ -17,84 +17,84 @@ const DEMO_ACTIVITY_SEED = {
   criador: {
     nome: "Batman"
   },
-  tema: "Laços de Repetição",
-  descricao: "Desafio formativo sobre estruturas de repetição, contadores, condições de parada e laços aninhados em Computação.",
-  objetivo: "Compreender e analisar estruturas de repetição (for e while), identificando condições de parada, contadores e avaliando laços aninhados.",
+  tema: "Laços de Repetição em Python",
+  descricao: "Desafio formativo sobre laços de repetição (while e for), listas, regra do índice zero, range() e prevenção de loop infinito em Python.",
+  objetivo: "Compreender e aplicar estruturas de repetição em Python, diferenciando o laço condicional (while) do laço de coleções (for), manipulando listas e a função range(), e identificando a prevenção de loops infinitos.",
   dataCriacao: "2026-09-24T10:00:00.000Z",
   questoes: [
     {
       id: 1,
-      enunciado: "Em linguagens estruturadas como JavaScript e Python, quando utilizamos um laço `for (let i = 0; i < 5; i++)`, qual é o papel específico da expressão `i++` (ou incremento)?",
+      enunciado: "Na aula, aprendemos que uma lista em Python funciona como uma caixa com compartimentos organizados para guardar vários itens juntos. Considere a lista abaixo:\n\n```python\namigos = [\"Lucas\", \"Beatriz\", \"Carlos\", \"Diana\"]\n```\n\nSeguindo a **Regra de Ouro** do Python para a contagem de posições, qual comando acessa exatamente o primeiro elemento (\"Lucas\")?",
       alternativas: [
-        "Inicializar a variável contadora antes do laço iniciar sua primeira repetição.",
-        "Atualizar o valor do contador ao final de cada iteração para permitir o avanço do laço.",
-        "Definir a condição lógica que interrompe imediatamente o laço.",
-        "Reiniciar a contagem sempre que o valor atingir o limite estipulado."
+        "amigos[1]",
+        "amigos[0]",
+        "amigos.primeiro()",
+        "amigos[\"Lucas\"]"
       ],
       respostaCorreta: 1,
-      explicacao: "O incremento (i++) é executado ao término de cada iteração. Sua função é atualizar a variável de controle para que a condição (i < 5) seja reavaliada, evitando laços infinitos.",
-      dica: "Pense no que precisa mudar a cada volta do laço para que a contagem progrida até a condição de término.",
-      conceito: "Estrutura do for e incremento",
-      bloom: "Compreender"
+      explicacao: "Em Python, a contagem de posições na memória sempre começa no índice zero (0). Portanto, amigos[0] acessa o primeiro item (\"Lucas\"), enquanto amigos[1] acessa o segundo item (\"Beatriz\").",
+      dica: "Lembre-se da \"Regra de Ouro\" das listas em Python: o primeiro compartimento da caixa sempre começa no índice zero (0).",
+      conceito: "Regra de ouro do índice zero em listas",
+      bloom: "Lembrar"
     },
     {
       id: 2,
-      enunciado: "Considere o seguinte trecho de código em execução:\n\n```javascript\nlet x = 10;\nwhile (x > 4) {\n    x = x - 2;\n}\n```\n\nQual será o valor final da variável `x` imediatamente após o laço finalizar?",
+      enunciado: "A função `range()` é um recurso essencial do Python para gerar sequências numéricas dinâmicas para o laço `for`, evitando a criação manual de listas. Observe o código abaixo:\n\n```python\nfor numero in range(5):\n    print(numero)\n```\n\nQuais números serão impressos no terminal pelo comando `print()`, na ordem exata de execução?",
       alternativas: [
-        "2",
-        "4",
-        "6",
-        "0"
+        "1, 2, 3, 4, 5",
+        "0, 1, 2, 3, 4",
+        "0, 1, 2, 3, 4, 5",
+        "1, 2, 3, 4"
       ],
       respostaCorreta: 1,
-      explicacao: "Na 1ª iteração x passa a ser 8. Na 2ª, x passa a ser 6. Na 3ª, x passa a ser 4. Em seguida, a condição (4 > 4) é avaliada como falsa, e o laço encerra mantendo x = 4.",
-      dica: "Simule o teste de mesa passo a passo: verifique o valor de x em cada iteração até que a condição torne-se falsa.",
-      conceito: "Estrutura do while",
-      bloom: "Aplicar"
+      explicacao: "A função range(5) gera uma sequência de 5 elementos iniciando sempre em 0 e parando uma unidade antes do número informado (ou seja: 0, 1, 2, 3 e 4). O limite superior 5 nunca é incluído.",
+      dica: "Em Python, range(n) sempre inicia no zero e para imediatamente antes do limite informado n.",
+      conceito: "Comportamento da função range()",
+      bloom: "Compreender"
     },
     {
       id: 3,
-      enunciado: "Observe o algoritmo a seguir:\n\n```javascript\nlet total = 0;\nlet i = 1;\nwhile (i !== 10) {\n    total += i;\n    i += 2;\n}\n```\n\nAo executar este trecho, o que acontecerá com a condição de parada do laço?",
+      enunciado: "No exercício prático de construção da tabuada com o laço condicional `while`, foi proposto o seguinte algoritmo em Python:\n\n```python\nmultiplicador = 1\nwhile multiplicador <= 4:\n    resultado = 7 * multiplicador\n    print(resultado)\n    multiplicador = multiplicador + 1\n```\n\nQuais valores serão impressos no terminal e qual será o valor final da variável `multiplicador` assim que o laço finalizar sua execução?",
       alternativas: [
-        "O laço executará exatamente 5 vezes e terminará com total igual a 25.",
-        "O laço entrará em repetição infinita pois a variável 'i' assume apenas valores ímpares (1, 3, 5, 7, 9, 11...) e nunca será estritamente igual a 10.",
-        "Ocorrerá um erro de sintaxe imediatamente na declaração do operador de desigualdade.",
-        "O laço parará no valor 9, pois 9 é o último número antes de 10."
+        "Imprime 7, 14, 21, 28 e o valor final de multiplicador é 4.",
+        "Imprime 7, 14, 21, 28 e o valor final de multiplicador é 5.",
+        "Imprime 7, 14, 21 e o valor final de multiplicador é 4.",
+        "Imprime 1, 2, 3, 4 e o laço entra em repetição infinita."
       ],
       respostaCorreta: 1,
-      explicacao: "Como i começa com 1 e cresce de 2 em 2, a sequência de valores é estritamente ímpar (1, 3, 5, 7, 9, 11, 13...). O valor 10 nunca é alcançado, mantendo a condição `i !== 10` permanentemente verdadeira.",
-      dica: "Observe a paridade da sequência gerada pelo incremento (+2 a partir de 1).",
-      conceito: "Condição de parada",
-      bloom: "Analisar"
+      explicacao: "O laço executa 4 iterações: para multiplicador = 1, 2, 3 e 4, imprimindo os múltiplos 7, 14, 21 e 28. Na 4ª volta, multiplicador é incrementado para 5. Ao retestar a condição (5 <= 4), o resultado é False e o laço encerra mantendo multiplicador = 5.",
+      dica: "Simule o teste de mesa passo a passo: acompanhe o valor de multiplicador em cada volta e identifique qual valor faz a condição (multiplicador <= 4) se tornar falsa.",
+      conceito: "Execução do while e variável de controle",
+      bloom: "Aplicar"
     },
     {
       id: 4,
-      enunciado: "Quantas vezes a mensagem \"Computação\" será impressa no console ao executar o seguinte laço?\n\n```javascript\nfor (let k = 3; k <= 7; k++) {\n    console.log(\"Computação\");\n}\n```",
+      enunciado: "Durante a aula prática, um aluno tentou simular uma contagem de passos com o laço `while`, mas seu programa travou imprimindo a mesma mensagem sem parar:\n\n```python\npassos = 1\nwhile passos <= 5:\n    print(f\"Passo número: {passos}\")\n```\n\nAo analisar o código, qual é a causa raiz desse comportamento (loop infinito) e como corrigi-lo corretamente?",
       alternativas: [
-        "4 vezes",
-        "3 vezes",
-        "5 vezes",
-        "7 vezes"
+        "O laço while não aceita a condição <=, devendo ser substituído obrigatoriamente pela função range().",
+        "A variável de controle 'passos' nunca é alterada dentro do laço, fazendo com que a condição 1 <= 5 seja sempre verdadeira (True); a solução é adicionar 'passos = passos + 1' no interior do laço.",
+        "O comando print() com formatação f\"...\" cria um ciclo contínuo na memória que impede o término do programa.",
+        "O laço while só funciona para percorrer listas fechadas, gerando travamento com números inteiros."
       ],
-      respostaCorreta: 2,
-      explicacao: "O contador k assume os valores: 3, 4, 5, 6 e 7. Como o operador relacional é menor ou igual (<=), ambos os limites estão inclusos, totalizando (7 - 3 + 1) = 5 iterações.",
-      dica: "Escreva no papel os valores assumidos por k: k=3, k=4, ..., e conte quantas vezes a condição k <= 7 é satisfeita.",
-      conceito: "Contador e número de iterações",
+      respostaCorreta: 1,
+      explicacao: "Um loop infinito ocorre quando a condição do while nunca se torna falsa. Como a variável passos não é incrementada dentro do laço, ela permanece sempre valendo 1, mantendo a condição (1 <= 5) eternamente verdadeira (True). A solução é atualizar a variável a cada repetição.",
+      dica: "Lembre-se do ponto crítico ensinado no Slide 5: esquecer de atualizar a variável de controle dentro do laço faz o computador rodar a repetição eternamente!",
+      conceito: "Identificação e prevenção de loop infinito",
       bloom: "Analisar"
     },
     {
       id: 5,
-      enunciado: "Analise a estrutura de laços aninhados abaixo:\n\n```javascript\nlet operacoes = 0;\nfor (let i = 0; i < 3; i++) {\n    for (let j = 0; j < 4; j++) {\n        operacoes++;\n    }\n}\n```\n\nAvalie o comportamento e determine quantas vezes a instrução `operacoes++` é executada:",
+      enunciado: "Analise os dois desafios de automação apresentados a seguir:\n\n- **Desafio 1 (Lista de Amigos):** Percorrer uma coleção predefinida de nomes `amigos = [\"Ana\", \"Pedro\", \"Sofia\"]` para exibir uma mensagem de boas-vindas para cada amigo, utilizando uma variável temporária (\"apelido\").\n- **Desafio 2 (Caminhada do Robô):** Fazer um robô dar passos *enquanto* não houver obstáculo detectado pelo sensor, sem saber com antecedência quantos passos serão necessários.\n\nConsultando a **Matriz Comparativa** de tomada de decisão (Slide 10), qual é a estrutura de repetição mais recomendada e natural para cada desafio?",
       alternativas: [
-        "7 vezes, pois somam-se as repetições dos laços externo e interno (3 + 4).",
-        "12 vezes, pois para cada ciclo do laço externo (3 vezes), o laço interno executa 4 iterações completas (3 × 4 = 12).",
-        "4 vezes, pois apenas o laço interno controla a variável operacoes.",
-        "9 vezes, pois a contagem encerra no índice anterior ao limite 3."
+        "Desafio 1: while (pois listas exigem contadores manuais); Desafio 2: for (pois sensores têm limites fixos).",
+        "Desafio 1: for (laço de coleções para conjunto determinado de itens); Desafio 2: while (laço condicional para repetição indeterminada baseada em condição lógica).",
+        "Ambos devem usar obrigatoriamente while, pois o laço for não existe na sintaxe padrão do Python.",
+        "Ambos devem usar for, pois o while só pode ser utilizado quando conhecemos o número exato de repetições."
       ],
       respostaCorreta: 1,
-      explicacao: "Laços aninhados multiplicam o número de execuções: para cada uma das 3 iterações de 'i', o laço 'j' executa 4 iterações. Logo, o total de operações é 3 × 4 = 12.",
-      dica: "Lembre-se da regra multiplicativa: cada repetição do laço externo dispara o laço interno do início ao fim.",
-      conceito: "Laços aninhados",
+      explicacao: "O laço 'for' é a escolha ideal para iterar sobre coleções determinadas (como listas), extraindo elemento por elemento com uma variável temporária. Já o 'while' é a ferramenta indicada para situações indeterminadas, onde a repetição depende de uma condição lógica dinâmica.",
+      dica: "Consulte a Matriz Comparativa do Slide 10: quando temos uma coleção de itens definidos usamos for; quando a repetição depende de uma condição que não sabemos quantas voltas dará, usamos while.",
+      conceito: "Critério de escolha entre while e for",
       bloom: "Avaliar"
     }
   ],
@@ -107,7 +107,7 @@ const StorageService = {
    */
   async init() {
     try {
-      const SEED_VERSION = "v2_clean_prod";
+      const SEED_VERSION = "v3_python_loops";
       const currentVersion = localStorage.getItem("educaComputaValida_seed_version");
 
       if (currentVersion !== SEED_VERSION) {
