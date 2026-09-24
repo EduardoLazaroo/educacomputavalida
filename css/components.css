@@ -54,15 +54,15 @@
 }
 
 .btn-outline {
-  background: rgba(255, 255, 255, 0.04);
+  background: var(--bg-card-option);
   color: var(--text-primary);
-  border-color: rgba(255, 255, 255, 0.15);
+  border-color: var(--border-subtle);
 }
 
 .btn-outline:hover:not(:disabled) {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.3);
-  color: #ffffff;
+  background: var(--nav-hover-bg);
+  border-color: var(--primary);
+  color: var(--text-heading);
 }
 
 .btn-outline-danger {
@@ -142,7 +142,7 @@
 
 .card-title {
   font-size: 1.35rem;
-  color: #ffffff;
+  color: var(--text-heading);
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -191,8 +191,8 @@ label {
 .input-select,
 .input-textarea {
   width: 100%;
-  background: rgba(11, 17, 32, 0.75);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: var(--bg-input);
+  border: 1px solid var(--border-input);
   border-radius: var(--radius-md);
   padding: 0.75rem 1rem;
   color: var(--text-primary);
@@ -206,20 +206,20 @@ label {
 .input-text:focus,
 .input-select:focus,
 .input-textarea:focus {
-  border-color: #6366f1;
-  background: rgba(11, 17, 32, 0.95);
+  border-color: var(--primary);
+  background: var(--bg-input-focus);
   box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25);
 }
 
 .input-select option {
-  background: #131c31;
-  color: #ffffff;
+  background: var(--bg-surface);
+  color: var(--text-primary);
   padding: 0.5rem;
 }
 
 .input-select option.option-occupied {
-  color: #94a3b8;
-  background: #1e293b;
+  color: var(--text-muted);
+  background: var(--bg-surface-elevated);
 }
 
 .input-code-display {
@@ -249,8 +249,9 @@ label {
 }
 
 .badge-neutral {
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--nav-hover-bg);
   color: var(--text-secondary);
+  border: 1px solid var(--border-subtle);
 }
 
 .badge-concept {
@@ -446,8 +447,8 @@ code.code-inline {
   display: flex;
   align-items: center;
   gap: 1rem;
-  background: rgba(11, 17, 32, 0.5);
-  border: 2px solid rgba(255, 255, 255, 0.09);
+  background: var(--bg-card-option);
+  border: 2px solid var(--border-card-option);
   border-radius: var(--radius-lg);
   padding: 1rem 1.25rem;
   cursor: pointer;
@@ -456,14 +457,14 @@ code.code-inline {
 }
 
 .alternative-card:hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--bg-surface-elevated);
   border-color: rgba(99, 102, 241, 0.4);
   transform: translateX(3px);
 }
 
 .alternative-card.selected {
-  background: rgba(79, 70, 229, 0.12);
-  border-color: #6366f1;
+  background: var(--primary-light);
+  border-color: var(--primary);
   box-shadow: 0 0 16px rgba(99, 102, 241, 0.25);
 }
 
@@ -471,7 +472,7 @@ code.code-inline {
   width: 34px;
   height: 34px;
   border-radius: var(--radius-md);
-  background: rgba(255, 255, 255, 0.06);
+  background: var(--bg-alt-letter);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -631,7 +632,7 @@ code.code-inline {
   font-family: var(--font-display);
   font-size: clamp(2.5rem, 5vw, 3.5rem);
   font-weight: 800;
-  color: #ffffff;
+  color: var(--text-heading);
   line-height: 1.1;
   margin: 0.5rem 0;
 }
@@ -680,15 +681,23 @@ code.code-inline {
 }
 
 .concept-item-mastered {
-  background: rgba(16, 185, 129, 0.1);
+  background: var(--success-bg);
+  color: #059669;
+  border: 1px solid rgba(16, 185, 129, 0.25);
+}
+
+[data-theme="dark"] .concept-item-mastered {
   color: #a7f3d0;
-  border: 1px solid rgba(16, 185, 129, 0.2);
 }
 
 .concept-item-review {
-  background: rgba(245, 158, 11, 0.1);
-  color: #fde68a;
+  background: var(--warning-bg);
+  color: #d97706;
   border: 1px solid rgba(245, 158, 11, 0.25);
+}
+
+[data-theme="dark"] .concept-item-review {
+  color: #fde68a;
 }
 
 .concept-icon {
@@ -709,7 +718,7 @@ code.code-inline {
   justify-content: space-between;
   align-items: center;
   padding: 0.75rem 1rem;
-  background: rgba(11, 17, 32, 0.4);
+  background: var(--bg-card-option);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md);
   flex-wrap: wrap;
@@ -745,8 +754,8 @@ code.code-inline {
 }
 
 .code-badge-box {
-  background: rgba(11, 17, 32, 0.75);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: var(--bg-card-option);
+  border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md);
   padding: 0.5rem 0.85rem;
   display: flex;
@@ -801,8 +810,9 @@ code.code-inline {
 }
 
 .tab-nav-btn.active {
-  color: #ffffff;
-  border-bottom-color: #6366f1;
+  color: var(--text-heading);
+  border-bottom-color: var(--primary);
+  font-weight: 700;
 }
 
 /* KPIs Analíticos */
@@ -834,7 +844,7 @@ code.code-inline {
   font-family: var(--font-display);
   font-size: 2rem;
   font-weight: 800;
-  color: #ffffff;
+  color: var(--text-heading);
   margin: 0.25rem 0;
 }
 
@@ -952,7 +962,7 @@ code.code-inline {
 }
 
 .analytics-table th {
-  background: rgba(11, 17, 32, 0.75);
+  background: var(--bg-table-header);
   padding: 0.85rem 1rem;
   color: var(--text-muted);
   font-weight: 600;
@@ -969,7 +979,7 @@ code.code-inline {
 }
 
 .analytics-table tr:hover td {
-  background: rgba(255, 255, 255, 0.02);
+  background: var(--bg-table-hover);
 }
 
 .part-hero-cell {
@@ -1039,7 +1049,8 @@ code.code-inline {
   width: 28px;
   height: 28px;
   border-radius: var(--radius-sm);
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--bg-alt-letter);
+  color: var(--text-primary);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1070,8 +1081,9 @@ code.code-inline {
   gap: 0.75rem;
   padding: 0.85rem 1.25rem;
   border-radius: var(--radius-md);
-  background: #1e293b;
-  color: #ffffff;
+  background: var(--bg-surface-elevated);
+  color: var(--text-primary);
+  border: 1px solid var(--border-subtle);
   box-shadow: var(--shadow-lg);
   font-size: 0.9rem;
   border-left: 4px solid transparent;
@@ -1148,8 +1160,8 @@ code.code-inline {
    ========================================================================== */
 
 .success-code-card {
-  background: rgba(11, 17, 32, 0.7);
-  border: 1px dashed rgba(99, 102, 241, 0.5);
+  background: var(--bg-surface-elevated);
+  border: 1px dashed var(--primary);
   border-radius: var(--radius-lg);
   padding: 1.5rem;
   text-align: center;

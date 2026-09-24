@@ -10,7 +10,7 @@ const SAFE_CODE_CHARS = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
 /**
  * Gera um código curto, legível e seguro contra ambiguidades
  * @param {number} length Comprimento do código (padrão: 6)
- * @returns {string} Código gerado (ex: LOOP7K, X7K9P2)
+ * @returns {string} Código gerado (ex: PYT801, X7K9P2)
  */
 function generateCode(length = 6) {
   let result = "";

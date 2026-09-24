@@ -1,9 +1,8 @@
 /**
- * educacaoComputacionalvalidador - Aplicação Principal e Roteador (App Orchestrator)
+ * educaComputaValida - Aplicação Principal e Roteador (App Orchestrator)
  * 
  * Gerencia a navegação entre as telas (SPA), ciclo de vida,
- * atalhos de teste da atividade de demonstração (LOOP7K / ADMIN7)
- * e inicialização dos serviços.
+ * alternância de temas (Dark / Light) e inicialização dos serviços.
  */
 
 const AppRouter = {
@@ -69,31 +68,55 @@ const AppRouter = {
     } else if (viewId === "view-criador-login") {
       ProfessorModule.initLogin(options.code || "");
     }
+  }
+};
+
+/**
+ * Gerenciador de Tema (Dark / Light) com persistência local
+ */
+const ThemeManager = {
+  THEME_KEY: "educacomputa_theme",
+
+  init() {
+    const savedTheme = localStorage.getItem(this.THEME_KEY) || "dark";
+    this.applyTheme(savedTheme);
+
+    const toggleBtn = document.getElementById("theme-toggle-btn");
+    if (toggleBtn) {
+      toggleBtn.addEventListener("click", () => {
+        const current = document.documentElement.getAttribute("data-theme") || "dark";
+        const next = current === "dark" ? "light" : "dark";
+        this.applyTheme(next);
+      });
+    }
   },
 
-  /**
-   * Atalho para testar a atividade de demonstração como aluno (LOOP7K)
-   */
-  testDemoAsStudent() {
-    this.navigateTo("view-participar-entrar", { code: "LOOP7K" });
-  },
+  applyTheme(theme) {
+    document.documentElement.setAttribute("data-theme", theme);
+    try {
+      localStorage.setItem(this.THEME_KEY, theme);
+    } catch (e) {
+      console.warn("Não foi possível salvar tema no localStorage", e);
+    }
 
-  /**
-   * Atalho para testar a área do criador com a chave de demonstração (ADMIN7)
-   */
-  testDemoAsCreator() {
-    this.navigateTo("view-criador-login", { code: "ADMIN7" });
-    // Pré-autentica se o usuário desejar entrar direto
-    ProfessorModule.loginCreator("ADMIN7");
+    const toggleBtn = document.getElementById("theme-toggle-btn");
+    if (toggleBtn) {
+      const isDark = theme === "dark";
+      toggleBtn.setAttribute("title", isDark ? "Mudar para modo claro" : "Mudar para modo escuro");
+      toggleBtn.setAttribute("aria-label", isDark ? "Mudar para modo claro" : "Mudar para modo escuro");
+    }
   }
 };
 
 // Inicialização após carregamento do DOM
 document.addEventListener("DOMContentLoaded", async () => {
-  // 1. Inicializa o serviço de armazenamento
+  // 1. Inicializa o tema (Dark / Light)
+  ThemeManager.init();
+
+  // 2. Inicializa o serviço de armazenamento
   await StorageService.init();
 
-  // 2. Configura listener para mudanças de hash na URL (botão voltar/avançar do navegador)
+  // 3. Configura listener para mudanças de hash na URL (botão voltar/avançar do navegador)
   window.addEventListener("hashchange", () => {
     const rawHash = window.location.hash.replace("#", "");
     if (rawHash) {
@@ -104,7 +127,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   });
 
-  // 3. Verifica hash inicial
+  // 4. Verifica hash inicial
   const initialHash = window.location.hash.replace("#", "");
   if (initialHash) {
     const target = `view-${initialHash}`;
@@ -117,7 +140,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     AppRouter.navigateTo("view-home");
   }
 
-  // 4. Configuração do menu mobile
+  // 5. Configuração do menu mobile
   const mobileToggle = document.getElementById("mobile-menu-toggle");
   const navMenu = document.getElementById("nav-menu-links");
   if (mobileToggle && navMenu) {
@@ -135,7 +158,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
   }
 
-  console.log("educacaoComputacionalvalidador inicializado com sucesso.");
+  console.log("educaComputaValida inicializado com sucesso.");
 });
 
 window.AppRouter = AppRouter;
+window.ThemeManager = ThemeManager;

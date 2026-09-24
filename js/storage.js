@@ -9,13 +9,13 @@
 
 const STORAGE_KEY = "educaComputaValida_atividades_v1";
 
-// Dados da atividade de demonstração padrão (LOOP7K / ADMIN7)
+// Dados da atividade padrão inicial (Python - Laços de Repetição)
 const DEMO_ACTIVITY_SEED = {
-  id: "ativ_loop7k",
-  codigoAtividade: "LOOP7K",
-  codigoCriador: "ADMIN7",
+  id: "ativ_pyt801",
+  codigoAtividade: "PYT801",
+  codigoCriador: "ADM801",
   criador: {
-    nome: "Batman"
+    nome: "Prof. Computação"
   },
   tema: "Laços de Repetição em Python",
   descricao: "Desafio formativo sobre laços de repetição (while e for), listas, regra do índice zero, range() e prevenção de loop infinito em Python.",
@@ -107,7 +107,7 @@ const StorageService = {
    */
   async init() {
     try {
-      const SEED_VERSION = "v4_hero_fix";
+      const SEED_VERSION = "v5_clean_prod";
       const currentVersion = localStorage.getItem("educaComputaValida_seed_version");
 
       if (currentVersion !== SEED_VERSION) {
@@ -146,7 +146,7 @@ const StorageService = {
   },
 
   /**
-   * Busca atividade pelo código da atividade (ex: LOOP7K)
+   * Busca atividade pelo código da atividade (ex: PYT801)
    * @param {string} code 
    * @returns {Promise<Object|null>}
    */
@@ -158,7 +158,7 @@ const StorageService = {
   },
 
   /**
-   * Busca atividade pelo código do criador (chave administrativa, ex: ADMIN7 ou X7K9P2)
+   * Busca atividade pelo código do criador (chave administrativa, ex: ADM801 ou X7K9P2)
    * @param {string} creatorCode 
    * @returns {Promise<Object|null>}
    */
@@ -329,7 +329,7 @@ const StorageService = {
    */
   async resetToDemo() {
     const all = await this.getAllActivities();
-    const filtered = all.filter(a => a.codigoAtividade !== "LOOP7K");
+    const filtered = all.filter(a => a.id !== DEMO_ACTIVITY_SEED.id && a.codigoAtividade !== DEMO_ACTIVITY_SEED.codigoAtividade);
     filtered.push(JSON.parse(JSON.stringify(DEMO_ACTIVITY_SEED)));
     localStorage.setItem(STORAGE_KEY, JSON.stringify(filtered));
     return DEMO_ACTIVITY_SEED;

@@ -19,15 +19,13 @@ O **educaComputaValida** é uma aplicação web moderna, responsiva e completa v
 
 ---
 
-## 🌟 Principais Recursos e Diferenciais Pedagógicos
-
-1. **Sem Telas Tradicionais de Login:**
+## 🌟 Principais1. **Sem Telas Tradicionais de Login:**
    - O professor cria a atividade e o sistema gera automaticamente dois códigos curtos e sem caracteres ambíguos:
-     - **Código da Atividade** (ex: `LOOP7K`): compartilhado publicamente com os alunos.
-     - **Código do Criador** (ex: `ADMIN7`): chave administrativa restrita do professor.
-2. **Seleção de Nomes por Heróis com Validação de Exclusividade:**
-   - Nomes selecionados a partir de um `<select>` pré-definido (Batman, Superman, Homem-Aranha, Mulher-Maravilha, etc.).
-   - Dois alunos **não** podem escolher o mesmo herói na mesma atividade. O sistema valida e avisa: *"Esse herói já está participando desta atividade. Escolha outro."*
+      - **Código da Atividade** (ex: `PYT801`): compartilhado publicamente com os alunos.
+      - **Código do Criador** (ex: `ADM801`): chave administrativa restrita do professor.
+2. **Seleção de Nomes por Heróis e Heroínas Anônimos:**
+   - Nomes selecionados a partir de um `<select>` com mais de 60 heróis e heroínas da cultura pop.
+   - Suporte a múltiplos participantes com o mesmo herói simultâneo com desambiguação automática (`#2`, `#3`), preservando o anonimato individual.
 3. **5 Questões com Taxonomia de Bloom:**
    - Classificação cognitiva estruturada: *Lembrar, Compreender, Aplicar, Analisar, Avaliar*.
    - Cada questão contém enunciado com suporte a blocos de código formatados, 4 alternativas, explicação da resposta correta, dica formativa e conceito computacional relacionado.
@@ -46,28 +44,27 @@ O **educaComputaValida** é uma aplicação web moderna, responsiva e completa v
 6. **Múltiplas Tentativas com Reembaralhamento Dinâmico:**
    - Ao clicar em *"Tentar Novamente"*, a ordem das questões e a posição das 4 alternativas são embaralhadas (com mapeamento matemático do novo índice correto).
    - O histórico de evolução de cada aluno é registrado tentativa por tentativa.
-7. **Painel Analítico do Professor:**
+7. **Painel Analítico do Professor & Temas Dark/Light:**
    - Métricas globais (Participantes, Tentativas, Média, Domínio Completo).
    - Desempenho por Taxonomia de Bloom (identificação dos níveis com maior defasagem).
    - Desempenho por Questão (% de acerto individual).
-   - Ranking de Conceitos com Maior Dificuldade.
    - Tabela individualizada de participantes com visualização detalhada de tentativas.
+   - Alternância contínua entre Modo Escuro e Modo Claro com persistência local.ização detalhada de tentativas.
    - Editor em tempo real e exportação/importação de JSON.
 
 ---
 
-## ⚡ Atividade de Demonstração Pré-Configurada
+## 📚 Atividade Padrão Inicial (Laços de Repetição em Python)
 
-Para testes imediatos, o sistema já vem com a seguinte atividade semeada:
+O sistema disponibiliza inicialmente uma atividade formativa completa com as seguintes credenciais de acesso:
 
 | Campo | Valor |
 |---|---|
-| **Tema** | Laços de Repetição |
-| **Código da Atividade (Aluno)** | `LOOP7K` |
-| **Código do Criador (Admin)** | `ADMIN7` |
-| **Criador** | Batman |
-| **Questões** | 5 questões sobre `for`, `while`, condições de parada, contadores e laços aninhados |
-| **Dados Prévios** | Participantes de teste simulando histórico real para análise de métricas |
+| **Tema** | Laços de Repetição em Python |
+| **Código da Atividade (Aluno)** | `PYT801` |
+| **Código do Criador (Admin)** | `ADM801` |
+| **Criador** | Prof. Computação |
+| **Questões** | 5 questões sobre `for`, `while`, listas (índice 0), `range()` e prevenção de loop infinito |
 
 ---
 
@@ -130,35 +127,35 @@ Basta dar um duplo clique no arquivo `index.html` ou abri-lo em qualquer navegad
 ## 🧪 2. Roteiro de Testes dos Fluxos
 
 ### Testando o Fluxo do Aluno:
-1. Acesse a aplicação e clique no botão **[ ⚡ Demo LOOP7K ]** ou clique em **[ PARTICIPAR DE UMA ATIVIDADE ]**.
-2. Digite o código `LOOP7K` e clique em **Verificar**.
-3. O sistema carregará a prévia da atividade e filtrará a lista de heróis.
-4. Escolha um herói livre (ex: *Thor*, *Hulk*, *Flash*, *Supergirl*, etc.).
+1. Acesse a aplicação e clique em **[ Participar ]** na barra de navegação.
+2. Digite o código da atividade (ex: `PYT801` ou o código de uma atividade criada) e clique em **Verificar**.
+3. O sistema carregará a prévia da atividade e listará os heróis e heroínas disponíveis.
+4. Escolha um codinome (ex: *Mulher-Maravilha*, *Tempestade*, *Pantera Negra*, *Homem-Aranha*, etc.).
 5. Clique em **[ Iniciar Desafio de Aprendizagem ]**.
-6. Responda às 5 questões:
-   - Observe o feedback imediato após clicar em **[ Responder Questão ]**.
-   - Note as dicas construtivas e os conceitos em caso de erro.
+6. Responda às questões conceituais:
+   - Observe o feedback imediato formativo após clicar em **[ Responder Questão ]**.
+   - Note as dicas construtivas e os conceitos em caso de erro, com suporte a blocos de código formatados.
 7. Na tela final de resultado:
-   - Verifique a classificação (ex: *Quase Lá*, *Domínio Completo*).
-   - Analise os *Conceitos Dominados* vs *Conceitos para Revisar*.
-   - Clique em **[ Tentar Novamente ]** para ver as questões e alternativas reembaralhadas, registrando uma nova tentativa no seu histórico!
+   - Verifique o diagnóstico pedagógico por domínio de aprendizagem (ex: *Domínio Completo*, *Quase Lá*).
+   - Analise a distinção entre *Conceitos Dominados* e *Conceitos para Revisar*.
+   - Clique em **[ Tentar Novamente ]** para ver as questões e alternativas reembaralhadas, registrando uma nova tentativa independente no seu histórico!
 
 ### Testando o Fluxo do Criador / Professor:
-1. Clique em **[ ÁREA DO CRIADOR ]** no menu superior.
-2. Digite a chave administrativa `ADMIN7` (ou clique no atalho para preencher).
-3. Clique em **[ Acessar Painel ]**:
-   - Visualize a taxa de acerto por nível da Taxonomia de Bloom (*Compreender*, *Aplicar*, *Analisar*, *Avaliar*).
-   - Veja o ranking dos conceitos com maior dificuldade.
-   - Veja a tabela de participantes e clique em **[ Ver Tentativas ]** para inspecionar cada resposta de um aluno.
-4. Vá para a aba **[ Editar Atividade ]** para alterar enunciados, explicações ou adicionar novas questões.
-5. Vá para a aba **[ Exportar & Backup JSON ]** para baixar ou copiar o JSON completo da atividade.
+1. Clique em **[ Área do Criador ]** na barra de navegação.
+2. Digite a chave administrativa (ex: `ADM801` ou a chave de uma atividade criada).
+3. Clique em **[ Acessar Painel da Atividade ]**:
+   - Acompanhe analíticos por nível da Taxonomia de Bloom (*Lembrar*, *Compreender*, *Aplicar*, *Analisar*, *Avaliar*).
+   - Visualize a taxa de acerto por questão e o ranking de dificuldade conceitual.
+   - Consulte a tabela de participantes anônimos e inspecione as tentativas detalhadas de cada aluno.
+4. Alterne para a aba **[ Editar Atividade ]** para alterar enunciados, explicações ou adicionar novas questões em tempo real.
+5. Use a alternância de tema no topo para alternar confortavelmente entre **Modo Escuro** e **Modo Claro**.
 
 ### Testando a Criação de Nova Atividade:
-1. Clique em **[ CRIAR ATIVIDADE ]**.
-2. Escolha seu herói criador (ex: *Batman* ou *Superman*).
-3. Clique em **[ Preencher Exemplo Didático ]** para testar rapidamente com uma atividade pré-formatada de *Condicionais e Controle de Fluxo*, ou digite suas próprias 5 questões.
+1. Clique em **[ Criar Atividade ]** na barra de navegação.
+2. Escolha seu codinome docente e informe tema, descrição e objetivos.
+3. Se desejar preencher um modelo prévio, clique em **[ Preencher Exemplo Didático ]** ou elabore manualmente suas 5 questões com taxonomia de Bloom.
 4. Clique em **[ Gerar Códigos e Criar Atividade ]**.
-5. Copie os dois códigos gerados e teste ambos imediatamente!
+5. Copie os códigos gerados (Código do Aluno e Chave do Criador) e realize o teste!
 
 ---
 

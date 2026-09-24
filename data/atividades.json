@@ -1,10 +1,10 @@
 [
   {
-    "id": "ativ_loop7k",
-    "codigoAtividade": "LOOP7K",
-    "codigoCriador": "ADMIN7",
+    "id": "ativ_pyt801",
+    "codigoAtividade": "PYT801",
+    "codigoCriador": "ADM801",
     "criador": {
-      "nome": "Batman"
+      "nome": "Prof. Computação"
     },
     "tema": "Laços de Repetição em Python",
     "descricao": "Desafio formativo sobre laços de repetição (while e for), listas, regra do índice zero, range() e prevenção de loop infinito em Python.",

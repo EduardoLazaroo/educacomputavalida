@@ -18,6 +18,16 @@
 
   <link rel="icon"
     href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💡</text></svg>">
+
+  <!-- Script Inline para evitar Flash de Tema (FOUC) -->
+  <script>
+    (function () {
+      try {
+        const theme = localStorage.getItem('educacomputa_theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {}
+    })();
+  </script>
 </head>
 
 <body>
@@ -47,11 +57,7 @@
         </div>
       </div>
 
-      <nav aria-label="Navegação Principal">
-        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Abrir menu de navegação"
-          aria-expanded="false" aria-controls="nav-menu-links">
-          ☰
-        </button>
+      <nav aria-label="Navegação Principal" class="main-nav-wrap">
         <ul class="nav-menu-links" id="nav-menu-links">
           <li>
             <button type="button" class="nav-link active" data-target="view-home"
@@ -78,6 +84,18 @@
             </button>
           </li>
         </ul>
+
+        <div class="header-tools">
+          <button type="button" id="theme-toggle-btn" class="theme-toggle-btn"
+            aria-label="Alternar tema claro ou escuro" title="Alternar entre modo claro e escuro">
+            <span class="theme-icon-light" aria-hidden="true">☀️</span>
+            <span class="theme-icon-dark" aria-hidden="true">🌙</span>
+          </button>
+          <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Abrir menu de navegação"
+            aria-expanded="false" aria-controls="nav-menu-links">
+            ☰
+          </button>
+        </div>
       </nav>
     </div>
   </header>
@@ -310,7 +328,7 @@
             <label for="aluno-input-codigo">Código da Atividade *</label>
             <div style="display: flex; gap: 0.5rem;">
               <input type="text" id="aluno-input-codigo" class="input-text input-code-display" maxlength="10"
-                placeholder="Ex: LOOP7K" autocomplete="off" style="text-transform: uppercase;">
+                placeholder="Ex: MAT801" autocomplete="off" style="text-transform: uppercase;">
               <button type="button" class="btn btn-outline"
                 onclick="AlunoModule.verifyActivityCode(document.getElementById('aluno-input-codigo').value)">
                 Verificar
@@ -541,9 +559,9 @@
         <div class="painel-header-bar">
           <div>
             <div class="text-xs text-muted uppercase">Painel de Gestão da Atividade</div>
-            <h2 id="painel-tema" style="color: #ffffff; margin-bottom: 0.25rem;">Laços de Repetição</h2>
+            <h2 id="painel-tema" style="margin-bottom: 0.25rem;">Laços de Repetição</h2>
             <div class="text-sm text-secondary">
-              Criador: <strong id="painel-criador-nome">Batman</strong> &bull;
+              Criador: <strong id="painel-criador-nome">-</strong> &bull;
               Criado em: <span id="painel-data-criacao">-</span>
             </div>
           </div>
@@ -552,7 +570,7 @@
             <div class="code-badge-box">
               <div>
                 <div class="code-badge-label">Código para Alunos</div>
-                <div id="painel-codigo-atividade" class="code-badge-val">LOOP7K</div>
+                <div id="painel-codigo-atividade" class="code-badge-val">------</div>
               </div>
               <button class="btn btn-outline btn-sm"
                 onclick="UtilsModule.copyToClipboard(document.getElementById('painel-codigo-atividade').innerText, this)"
@@ -823,17 +841,6 @@
         <span class="badge badge-neutral">Taxonomia de Bloom</span>
         <span class="badge badge-neutral">JSON Storage</span>
         <span class="badge badge-neutral">Vercel Ready</span>
-      </div>
-      <div class="footer-demo-wrap" style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
-        <span class="text-xs text-muted">Apresentação:</span>
-        <button type="button" class="btn btn-outline btn-sm" onclick="AppRouter.testDemoAsStudent()"
-          title="Testar atividade de demonstração (Laços de Repetição) como aluno">
-          Demo Aluno (LOOP7K)
-        </button>
-        <button type="button" class="btn btn-outline btn-sm" onclick="AppRouter.testDemoAsCreator()"
-          title="Acessar painel do professor da demonstração">
-          Demo Professor
-        </button>
       </div>
     </div>
   </footer>
