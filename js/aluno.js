@@ -150,13 +150,8 @@ const AlunoModule = {
       return;
     }
 
-    // Identificador único da sessão anônima do aluno (suporta concorrência em sala de aula)
-    let partId = sessionStorage.getItem("educacomputa_participant_id");
-    if (!partId) {
-      partId = "part_" + Date.now().toString(36) + "_" + Math.random().toString(36).substring(2, 7);
-      sessionStorage.setItem("educacomputa_participant_id", partId);
-    }
-    this.participantId = partId;
+    // Gera ID único de sessão para esta nova participação de herói
+    this.participantId = "part_" + Date.now().toString(36) + "_" + Math.random().toString(36).substring(2, 7);
     this.currentHero = heroName;
     this.attemptNumber = 1;
     this.attemptResponses = [];
@@ -189,7 +184,7 @@ const AlunoModule = {
     
     const heroDetails = HeroesModule.getHeroDetails(this.currentHero);
     const heroEmojiEl = document.getElementById("desafio-heroi-emoji");
-    if (heroEmojiEl) heroEmojiEl.textContent = heroDetails.emoji;
+    if (heroEmojiEl) heroEmojiEl.textContent = heroDetails?.emoji || "🦸";
 
     document.getElementById("desafio-tentativa-badge").textContent = `Tentativa ${this.attemptNumber}`;
 
@@ -474,7 +469,6 @@ const AlunoModule = {
         this.currentActivity = regResult.activity;
         if (regResult.participant) {
           this.participantId = regResult.participant.id;
-          sessionStorage.setItem("educacomputa_participant_id", this.participantId);
           if (regResult.participant.nome) {
             this.currentHero = regResult.participant.nome;
           }
@@ -498,7 +492,8 @@ const AlunoModule = {
   renderResults(attemptData, mastery) {
     const heroDetails = HeroesModule.getHeroDetails(this.currentHero);
     
-    document.getElementById("resultado-heroi-emoji").textContent = heroDetails.emoji;
+    const resEmojiEl = document.getElementById("resultado-heroi-emoji");
+    if (resEmojiEl) resEmojiEl.textContent = heroDetails?.emoji || "🦸";
     document.getElementById("resultado-heroi-nome").textContent = this.currentHero;
     document.getElementById("resultado-tema").textContent = this.currentActivity.tema;
 

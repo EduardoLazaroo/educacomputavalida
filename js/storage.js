@@ -107,7 +107,7 @@ const StorageService = {
    */
   async init() {
     try {
-      const SEED_VERSION = "v3_python_loops";
+      const SEED_VERSION = "v4_hero_fix";
       const currentVersion = localStorage.getItem("educaComputaValida_seed_version");
 
       if (currentVersion !== SEED_VERSION) {
@@ -236,14 +236,18 @@ const StorageService = {
 
     let participant = null;
 
-    // 1. Busca pelo ID exclusivo de sessão do participante se fornecido
+    const cleanHero = heroName ? heroName.trim() : "Participante Anônimo";
+
+    // 1. Busca pelo ID exclusivo de sessão do participante se fornecido E se corresponder ao mesmo herói
     if (participantId) {
-      participant = activity.participantes.find(p => p.id === participantId);
+      participant = activity.participantes.find(p => 
+        p.id === participantId && 
+        (p.heroiBase || p.nome).toLowerCase() === cleanHero.toLowerCase()
+      );
     }
 
-    // 2. Se não encontrou por ID, mas já existe alguém com esse nome exato
+    // 2. Se não encontrou por ID, cria novo participante com desambiguação para concorrência
     if (!participant) {
-      const cleanHero = heroName ? heroName.trim() : "Participante Anônimo";
       let finalDisplayName = cleanHero;
 
       // Se já houver participante cadastrado com esse mesmo herói base e não for a mesma sessão

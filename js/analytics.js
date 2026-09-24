@@ -210,12 +210,12 @@ const AnalyticsModule = {
         ultimaTentativa = tentativas[tentativas.length - 1];
       }
 
-      const heroDetails = HeroesModule.getHeroDetails(p.nome);
+      const heroDetails = HeroesModule.getHeroDetails(p.heroiBase || p.nome);
 
       return {
         nome: p.nome,
-        emoji: heroDetails.emoji,
-        cor: heroDetails.cor,
+        emoji: heroDetails?.emoji || (p.nome && (p.nome.includes("Mulher") || p.nome.includes("Girl")) ? "🦸‍♀️" : "🦸"),
+        cor: heroDetails?.cor || "#06b6d4",
         totalTentativas: totalTentativasPart,
         melhorAcertos: melhorTentativa ? `${melhorTentativa.acertos}/${melhorTentativa.total}` : "-",
         melhorPercentual: melhorTentativa ? melhorTentativa.percentual : 0,

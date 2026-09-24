@@ -1,77 +1,77 @@
 /**
  * educacaoComputacionalvalidador - Lista e Helpers de Heróis e Heroínas
  * 
- * Contém mais de 50 heróis e heroínas equilibrados para turmas de 40+ estudantes e docentes.
- * Focado no anonimato pedagógico autêntico e sem poluição visual.
+ * Contém mais de 60 heróis e heroínas equilibrados para turmas de 40+ estudantes e docentes.
+ * Focado no anonimato pedagógico autêntico, cada herói possui seu emoji temático.
  */
 
 const HEROES_LIST = [
   // Heroínas
-  { nome: "Mulher-Maravilha", universo: "DC", genero: "F" },
-  { nome: "Capitã Marvel", universo: "Marvel", genero: "F" },
-  { nome: "Supergirl", universo: "DC", genero: "F" },
-  { nome: "Viúva Negra", universo: "Marvel", genero: "F" },
-  { nome: "Feiticeira Escarlate", universo: "Marvel", genero: "F" },
-  { nome: "Tempestade", universo: "Marvel", genero: "F" },
-  { nome: "Batgirl", universo: "DC", genero: "F" },
-  { nome: "Mulher-Gato", universo: "DC", genero: "F" },
-  { nome: "Ravena", universo: "DC", genero: "F" },
-  { nome: "Estelar", universo: "DC", genero: "F" },
-  { nome: "Jean Grey", universo: "Marvel", genero: "F" },
-  { nome: "Vampira", universo: "Marvel", genero: "F" },
-  { nome: "Jessica Jones", universo: "Marvel", genero: "F" },
-  { nome: "Vespa", universo: "Marvel", genero: "F" },
-  { nome: "Gamora", universo: "Marvel", genero: "F" },
-  { nome: "Mulher-Hulk", universo: "Marvel", genero: "F" },
-  { nome: "Zatanna", universo: "DC", genero: "F" },
-  { nome: "Canário Negro", universo: "DC", genero: "F" },
-  { nome: "Shuri", universo: "Marvel", genero: "F" },
-  { nome: "Gwen-Aranha", universo: "Marvel", genero: "F" },
-  { nome: "Kate Bishop", universo: "Marvel", genero: "F" },
-  { nome: "Kamala Khan", universo: "Marvel", genero: "F" },
-  { nome: "Mantis", universo: "Marvel", genero: "F" },
-  { nome: "Mera", universo: "DC", genero: "F" },
-  { nome: "Valquíria", universo: "Marvel", genero: "F" },
-  { nome: "Elektra", universo: "Marvel", genero: "F" },
-  { nome: "Mulher-Invisível", universo: "Marvel", genero: "F" },
-  { nome: "Polaris", universo: "Marvel", genero: "F" },
+  { nome: "Mulher-Maravilha", emoji: "👑", universo: "DC", genero: "F" },
+  { nome: "Capitã Marvel", emoji: "⭐", universo: "Marvel", genero: "F" },
+  { nome: "Supergirl", emoji: "🦸‍♀️", universo: "DC", genero: "F" },
+  { nome: "Viúva Negra", emoji: "🕷️", universo: "Marvel", genero: "F" },
+  { nome: "Feiticeira Escarlate", emoji: "🔮", universo: "Marvel", genero: "F" },
+  { nome: "Tempestade", emoji: "⚡", universo: "Marvel", genero: "F" },
+  { nome: "Batgirl", emoji: "🦇", universo: "DC", genero: "F" },
+  { nome: "Mulher-Gato", emoji: "🐱", universo: "DC", genero: "F" },
+  { nome: "Ravena", emoji: "🌙", universo: "DC", genero: "F" },
+  { nome: "Estelar", emoji: "✨", universo: "DC", genero: "F" },
+  { nome: "Jean Grey", emoji: "🔥", universo: "Marvel", genero: "F" },
+  { nome: "Vampira", emoji: "🧤", universo: "Marvel", genero: "F" },
+  { nome: "Jessica Jones", emoji: "🕵️‍♀️", universo: "Marvel", genero: "F" },
+  { nome: "Vespa", emoji: "🐝", universo: "Marvel", genero: "F" },
+  { nome: "Gamora", emoji: "🗡️", universo: "Marvel", genero: "F" },
+  { nome: "Mulher-Hulk", emoji: "💚", universo: "Marvel", genero: "F" },
+  { nome: "Zatanna", emoji: "🎩", universo: "DC", genero: "F" },
+  { nome: "Canário Negro", emoji: "🎵", universo: "DC", genero: "F" },
+  { nome: "Shuri", emoji: "🐾", universo: "Marvel", genero: "F" },
+  { nome: "Gwen-Aranha", emoji: "🕸️", universo: "Marvel", genero: "F" },
+  { nome: "Kate Bishop", emoji: "🏹", universo: "Marvel", genero: "F" },
+  { nome: "Kamala Khan", emoji: "⚡", universo: "Marvel", genero: "F" },
+  { nome: "Mantis", emoji: "🌿", universo: "Marvel", genero: "F" },
+  { nome: "Mera", emoji: "🌊", universo: "DC", genero: "F" },
+  { nome: "Valquíria", emoji: "🛡️", universo: "Marvel", genero: "F" },
+  { nome: "Elektra", emoji: "⚔️", universo: "Marvel", genero: "F" },
+  { nome: "Mulher-Invisível", emoji: "💫", universo: "Marvel", genero: "F" },
+  { nome: "Polaris", emoji: "🧲", universo: "Marvel", genero: "F" },
 
   // Heróis
-  { nome: "Batman", universo: "DC", genero: "M" },
-  { nome: "Superman", universo: "DC", genero: "M" },
-  { nome: "Homem-Aranha", universo: "Marvel", genero: "M" },
-  { nome: "Homem de Ferro", universo: "Marvel", genero: "M" },
-  { nome: "Capitão América", universo: "Marvel", genero: "M" },
-  { nome: "Thor", universo: "Marvel", genero: "M" },
-  { nome: "Hulk", universo: "Marvel", genero: "M" },
-  { nome: "Flash", universo: "DC", genero: "M" },
-  { nome: "Robin", universo: "DC", genero: "M" },
-  { nome: "Aquaman", universo: "DC", genero: "M" },
-  { nome: "Pantera Negra", universo: "Marvel", genero: "M" },
-  { nome: "Doutor Estranho", universo: "Marvel", genero: "M" },
-  { nome: "Arqueiro Verde", universo: "DC", genero: "M" },
-  { nome: "Ciborgue", universo: "DC", genero: "M" },
-  { nome: "Lanterna Verde", universo: "DC", genero: "M" },
-  { nome: "Wolverine", universo: "Marvel", genero: "M" },
-  { nome: "Demolidor", universo: "Marvel", genero: "M" },
-  { nome: "Noturno", universo: "Marvel", genero: "M" },
-  { nome: "Visão", universo: "Marvel", genero: "M" },
-  { nome: "Falcão", universo: "Marvel", genero: "M" },
-  { nome: "Soldado Invernal", universo: "Marvel", genero: "M" },
-  { nome: "Senhor das Estrelas", universo: "Marvel", genero: "M" },
-  { nome: "Homem-Formiga", universo: "Marvel", genero: "M" },
-  { nome: "Máquina de Combate", universo: "Marvel", genero: "M" },
-  { nome: "Gavião Arqueiro", universo: "Marvel", genero: "M" },
-  { nome: "Shazam", universo: "DC", genero: "M" },
-  { nome: "Besouro Azul", universo: "DC", genero: "M" },
-  { nome: "Raio Negro", universo: "DC", genero: "M" },
-  { nome: "Asa Noturna", universo: "DC", genero: "M" },
-  { nome: "Constantine", universo: "DC", genero: "M" },
-  { nome: "Motoqueiro Fantasma", universo: "Marvel", genero: "M" },
-  { nome: "Namor", universo: "Marvel", genero: "M" },
-  { nome: "Colossus", universo: "Marvel", genero: "M" },
-  { nome: "Ciclope", universo: "Marvel", genero: "M" },
-  { nome: "Senhor Fantástico", universo: "Marvel", genero: "M" }
+  { nome: "Batman", emoji: "🦇", universo: "DC", genero: "M" },
+  { nome: "Superman", emoji: "🦸‍♂️", universo: "DC", genero: "M" },
+  { nome: "Homem-Aranha", emoji: "🕷️", universo: "Marvel", genero: "M" },
+  { nome: "Homem de Ferro", emoji: "🤖", universo: "Marvel", genero: "M" },
+  { nome: "Capitão América", emoji: "🛡️", universo: "Marvel", genero: "M" },
+  { nome: "Thor", emoji: "🔨", universo: "Marvel", genero: "M" },
+  { nome: "Hulk", emoji: "🟢", universo: "Marvel", genero: "M" },
+  { nome: "Flash", emoji: "⚡", universo: "DC", genero: "M" },
+  { nome: "Robin", emoji: "🎭", universo: "DC", genero: "M" },
+  { nome: "Aquaman", emoji: "🔱", universo: "DC", genero: "M" },
+  { nome: "Pantera Negra", emoji: "🐾", universo: "Marvel", genero: "M" },
+  { nome: "Doutor Estranho", emoji: "👁️", universo: "Marvel", genero: "M" },
+  { nome: "Arqueiro Verde", emoji: "🏹", universo: "DC", genero: "M" },
+  { nome: "Ciborgue", emoji: "🦾", universo: "DC", genero: "M" },
+  { nome: "Lanterna Verde", emoji: "💍", universo: "DC", genero: "M" },
+  { nome: "Wolverine", emoji: "🐺", universo: "Marvel", genero: "M" },
+  { nome: "Demolidor", emoji: "🦯", universo: "Marvel", genero: "M" },
+  { nome: "Noturno", emoji: "💨", universo: "Marvel", genero: "M" },
+  { nome: "Visão", emoji: "💎", universo: "Marvel", genero: "M" },
+  { nome: "Falcão", emoji: "🦅", universo: "Marvel", genero: "M" },
+  { nome: "Soldado Invernal", emoji: "🦾", universo: "Marvel", genero: "M" },
+  { nome: "Senhor das Estrelas", emoji: "🚀", universo: "Marvel", genero: "M" },
+  { nome: "Homem-Formiga", emoji: "🐜", universo: "Marvel", genero: "M" },
+  { nome: "Máquina de Combate", emoji: "🛡️", universo: "Marvel", genero: "M" },
+  { nome: "Gavião Arqueiro", emoji: "🏹", universo: "Marvel", genero: "M" },
+  { nome: "Shazam", emoji: "⚡", universo: "DC", genero: "M" },
+  { nome: "Besouro Azul", emoji: "🪲", universo: "DC", genero: "M" },
+  { nome: "Raio Negro", emoji: "⚡", universo: "DC", genero: "M" },
+  { nome: "Asa Noturna", emoji: "🎭", universo: "DC", genero: "M" },
+  { nome: "Constantine", emoji: "🧥", universo: "DC", genero: "M" },
+  { nome: "Motoqueiro Fantasma", emoji: "🔥", universo: "Marvel", genero: "M" },
+  { nome: "Namor", emoji: "🌊", universo: "Marvel", genero: "M" },
+  { nome: "Colossus", emoji: "🛡️", universo: "Marvel", genero: "M" },
+  { nome: "Ciclope", emoji: "🕶️", universo: "Marvel", genero: "M" },
+  { nome: "Senhor Fantástico", emoji: "🔬", universo: "Marvel", genero: "M" }
 ];
 
 /**
@@ -82,12 +82,27 @@ function getHeroesList() {
 }
 
 /**
- * Busca detalhes de um herói pelo nome
+ * Busca detalhes de um herói pelo nome com garantia de emoji válido
  */
 function getHeroDetails(nome) {
-  const baseName = (nome || "").split("#")[0].trim();
+  if (!nome) {
+    return { nome: "Participante Anônimo", emoji: "🦸", universo: "Educa", genero: "N" };
+  }
+  const baseName = nome.split("#")[0].trim();
   const hero = HEROES_LIST.find(h => h.nome.toLowerCase() === baseName.toLowerCase());
-  return hero || { nome: nome || "Participante Anônimo", universo: "Educa", genero: "N" };
+  if (hero) {
+    return {
+      ...hero,
+      emoji: hero.emoji || (hero.genero === "F" ? "🦸‍♀️" : "🦸‍♂️")
+    };
+  }
+  const isFemale = nome.toLowerCase().includes("mulher") || nome.toLowerCase().includes("girl");
+  return {
+    nome: nome,
+    emoji: isFemale ? "🦸‍♀️" : "🦸‍♂️",
+    universo: "Educa",
+    genero: isFemale ? "F" : "M"
+  };
 }
 
 /**
@@ -127,9 +142,9 @@ function populateHeroSelect(selectEl, options = {}) {
 
     const count = usageCountMap[hero.nome.toLowerCase()] || 0;
     if (count > 0) {
-      opt.textContent = `${hero.nome} (${count} em atividade)`;
+      opt.textContent = `${hero.emoji} ${hero.nome} (${count} em atividade)`;
     } else {
-      opt.textContent = hero.nome;
+      opt.textContent = `${hero.emoji} ${hero.nome}`;
     }
 
     if (currentHero && (hero.nome.toLowerCase() === currentHero.toLowerCase() || currentHero.startsWith(hero.nome))) {

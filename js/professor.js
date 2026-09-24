@@ -552,7 +552,7 @@ const ProfessorModule = {
         tr.innerHTML = `
           <td>
             <div class="part-hero-cell">
-              <span class="part-emoji">${p.emoji}</span>
+              <span class="part-emoji">${p.emoji || '🦸'}</span>
               <strong>${p.nome}</strong>
             </div>
           </td>
@@ -585,8 +585,9 @@ const ProfessorModule = {
     const modal = document.getElementById("modal-participante");
     if (!modal) return;
 
-    const heroDetails = HeroesModule.getHeroDetails(p.nome);
-    document.getElementById("modal-part-title").innerHTML = `${heroDetails.emoji} Tentativas de <strong>${p.nome}</strong>`;
+    const heroDetails = HeroesModule.getHeroDetails(p.heroiBase || p.nome);
+    const emojiToShow = heroDetails?.emoji || p.emoji || "🦸";
+    document.getElementById("modal-part-title").innerHTML = `${emojiToShow} Tentativas de <strong>${p.nome}</strong>`;
 
     const body = document.getElementById("modal-part-body");
     body.innerHTML = "";
