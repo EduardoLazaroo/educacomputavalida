@@ -10,10 +10,11 @@ EducaComputaValida e uma aplicacao estatica de avaliacao formativa em computacao
 
 ## Evidencias visuais recomendadas
 
-1. Entrada do estudante em uma atividade.
-2. Feedback formativo apos uma resposta.
-3. Painel analitico do professor.
-4. Editor de atividade e alternancia de tema.
+1. Diagrama de arquitetura em camadas (`evidencias/arquitetura_camadas_spa.png`).
+2. Distribuicao das questoes por nivel da Taxonomia de Bloom (`evidencias/taxonomia_bloom_distribuicao.png`).
+3. Log de validacao dos modulos e schema JSON (`evidencias/log_validacao_real.txt`).
+4. Entrada do estudante e feedback formativo apos resposta.
+5. Relatorio Executivo Word diagramado (`EducaComputaValida_Relatorio_Publicacao.docx`).
 
 ## Prompt para imagem complementar
 

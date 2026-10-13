@@ -188,6 +188,21 @@ Siga as instruções padrão na tela (escolha as opções padrão para projeto e
 
 ---
 
+## 🖼️ 4. Evidências Visuais e Arquitetura
+
+| Dimensão | Evidência Gráfica |
+| :--- | :--- |
+| **Arquitetura em Camadas** | ![Arquitetura](evidencias/arquitetura_camadas_spa.png) |
+| **Taxonomia de Bloom** | ![Taxonomia Bloom](evidencias/taxonomia_bloom_distribuicao.png) |
+
+---
+
+## 📄 5. Material de Publicação para Portfólio
+
+O relatório executivo diagramado em Word, contendo a análise pedagógica completa, diagramas e roteiro editorial para redes e portfólio, está disponível em [`EducaComputaValida_Relatorio_Publicacao.docx`](file:///d:/projetos/educacomputavalida/EducaComputaValida_Relatorio_Publicacao.docx).
+
+---
+
 ## 📜 Licença e Propósito Educacional
 
 Desenvolvido com foco no avanço da **Educação em Computação**, avaliação formativa autêntica e autonomia discente.
